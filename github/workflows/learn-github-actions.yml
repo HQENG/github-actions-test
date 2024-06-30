@@ -1,0 +1,12 @@
+name: Learn GitHub Actions
+
+on: [push]
+
+jobs:
+  explore-github-actions:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "🎉 The job was automatically triggered by a push event"
+      - run: echo "🐧 This job is now running on a Linux virtual machine"
+      - run: echo "📎 The name of your branch is ${{ github.ref }}"
+      - run: echo "💡 The job is now complete"
