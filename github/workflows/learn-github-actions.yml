@@ -1,12 +1,19 @@
 name: Learn GitHub Actions
 
-on: [push]
+on:
+  push:
+    branches:
+      - main
 
 jobs:
-  explore-github-actions:
+  build:
     runs-on: ubuntu-latest
+
     steps:
-      - run: echo "🎉 The job was automatically triggered by a push event"
-      - run: echo "🐧 This job is now running on a Linux virtual machine"
-      - run: echo "📎 The name of your branch is ${{ github.ref }}"
-      - run: echo "💡 The job is now complete"
+      - name: Checkout code
+        uses: actions/checkout@v2
+        with:
+          node-version: "20"
+
+      - name: Print a message
+        run: echo "Hello, GitHub Actions!"
